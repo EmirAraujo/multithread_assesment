@@ -1,4 +1,4 @@
-from logging.logging import Logging
+from logger.logger import Logging # name changed by library name duplication
 from sensors.base_sensor import BaseSensor
 from service.repository.repository import Repository
 from utils.network import Network
@@ -8,3 +8,4 @@ if __name__ == '__main__':
     network = Network()
     sensors = BaseSensor(network)
     logging = Logging(repository, network)
+    logging.start()
