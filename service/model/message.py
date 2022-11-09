@@ -14,7 +14,7 @@ class Message(Base):
     sensor_name = Column(String, nullable=False)
     value = Column(Integer, nullable=False)
 
-    def __init__(self,timestamp:datetime,id:int,sensor_name:str,value:int):
+    def __init__(self, timestamp:datetime, id:int, sensor_name:str, value:int):
         super(Message, self).__init__()
         self.timestamp = timestamp
         self.id = id

@@ -14,12 +14,16 @@ class Repository:
 
         Message.metadata.create_all(self.engine)
 
+    def add_message(self, message):
+        if isinstance(message,Message):
+            self.session.add(message)
 
-    def save(self, message: Message):  
+    def save(self, message: Message):
         if isinstance(message, list):
             for m in message:
-                self.session.add(m)
+                self.add_message(m)
         else:
-            self.session.add(message)
+            self.add_message(message)
         self.session.commit()
+
         

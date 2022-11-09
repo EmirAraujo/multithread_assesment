@@ -8,4 +8,3 @@ if __name__ == '__main__':
     network = Network()
     sensors = BaseSensor(network)
     logging = Logging(repository, network)
-    logging.start()
